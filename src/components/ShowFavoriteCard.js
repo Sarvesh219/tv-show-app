@@ -29,7 +29,7 @@ const useStyles = makeStyles(() => ({
         color: '#65CED5',
         fontWeight: 'bold',
         cursor: 'pointer',
-        font: 'Roboto'
+        fontFamily: 'system-ui'
     },
     description: {
         marginTop: 10
