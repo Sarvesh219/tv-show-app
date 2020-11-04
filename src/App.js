@@ -63,8 +63,6 @@ function App(props) {
 
   const favoriteShowsList = showsList.filter(item => item.isFavorite);
 
-  console.log(219, favoriteShowsList);
-
   return (
     <Container maxWidth="md">
       <AppBar position="static">
