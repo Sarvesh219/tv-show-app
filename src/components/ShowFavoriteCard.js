@@ -33,6 +33,9 @@ const useStyles = makeStyles(() => ({
     },
     description: {
         marginTop: 10
+    },
+    gridItem: {
+        padding: '0 10px 8px 0'
     }
 }));
 
@@ -74,23 +77,23 @@ function ShowFavoriteCard(props) {
                 subheader={getSubheader(show)}
             />
             <CardContent>
-            <Grid container spacing={2} alignContent="center">
-                    <Grid item xs={3} sm={3} md={3} lg={3}>
+                <Grid container alignContent="center">
+                    <Grid item xs={4} sm={4} md={4} lg={4} className={classes.gridItem}>
                         <Typography style={{ fontWeight: 600 }} variant="subtitle2">Genre: </Typography>
                     </Grid>
-                    <Grid item xs={9} sm={9} md={9} lg={9}>
+                    <Grid item xs={8} sm={8} md={8} lg={8} className={classes.gridItem}>
                         <Typography variant="body2">{show.genres.length > 0 ? show.genres.toString().replace(/,/g, ', ') : 'None'}</Typography>
                     </Grid>
-                    <Grid item xs={3} sm={3} md={3} lg={3}>
+                    <Grid item xs={4} sm={4} md={4} lg={4} className={classes.gridItem}>
                         <Typography style={{ fontWeight: 600 }} variant="subtitle2">Rating: </Typography>
                     </Grid>
-                    <Grid item xs={9} sm={9} md={9} lg={9}>
+                    <Grid item xs={8} sm={8} md={8} lg={8} className={classes.gridItem}>
                         <Typography variant="body2">{show.rating.average ? show.rating.average : 'None'}</Typography>
                     </Grid>
-                    <Grid item xs={3} sm={3} md={3} lg={3}>
+                    <Grid item xs={4} sm={4} md={4} lg={4} className={classes.gridItem}>
                         <Typography style={{ fontWeight: 600 }} variant="subtitle2">Official Site: </Typography>
                     </Grid>
-                    <Grid item xs={9} sm={9} md={9} lg={9}>
+                    <Grid item xs={8} sm={8} md={8} lg={8} className={classes.gridItem}>
                         {show.network && (
                             <Link classes={{ root: classes.link }} href={show.officialSite} color="secondary" target="_blank">{show.network.name}</Link>
                         )}
@@ -98,10 +101,10 @@ function ShowFavoriteCard(props) {
                             <Typography variant="body2">None</Typography>
                         )}
                     </Grid>
-                    <Grid item xs={3} sm={3} md={3} lg={3}>
+                    <Grid item xs={4} sm={4} md={4} lg={4} className={classes.gridItem}>
                         <Typography style={{ fontWeight: 600 }} variant="subtitle2">Status: </Typography>
                     </Grid>
-                    <Grid item xs={9} sm={9} md={9} lg={9}>
+                    <Grid item xs={8} sm={8} md={8} lg={8} className={classes.gridItem}>
                         <Typography variant="body2">{show.status ? show.status : 'None'}</Typography>
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={12}>
