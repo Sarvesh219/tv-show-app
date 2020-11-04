@@ -64,7 +64,7 @@ function App(props) {
   const favoriteShowsList = showsList.filter(item => item.isFavorite);
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <AppBar position="static">
         <Tabs value={value} onChange={handleTabsChange} aria-label="simple tabs example">
           <Tab label="Shows" {...a11yProps(0)} />
