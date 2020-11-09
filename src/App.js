@@ -40,7 +40,7 @@ function a11yProps(index) {
   };
 }
 
-function App(props) {
+export function App(props) {
   const { dispatch, showsList } = props;
   const [value, setValue] = useState(0);
 
@@ -64,17 +64,17 @@ function App(props) {
   const favoriteShowsList = showsList.filter(item => item.isFavorite);
 
   return (
-    <Container maxWidth="lg">
-      <AppBar position="static">
-        <Tabs value={value} onChange={handleTabsChange} aria-label="simple tabs example">
+    <Container maxWidth="lg" data-test="app-container">
+      <AppBar position="static" data-test="appbar-main">
+        <Tabs value={value} onChange={handleTabsChange} aria-label="simple tabs example" data-test="appbar-tabs">
           <Tab label="Shows" {...a11yProps(0)} />
-          <Tab label="Favourites" {...a11yProps(1)} />
+          <Tab label="Favorites" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0} data-test="tabpanel-main">
         <ShowsList onToggleFavoriteShow={toggleFavoriteShow} showsList={showsList} />
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1} data-test="tabpanel-main">
         <FavoriteShowsList onRemoveFavoriteShow={removeFavoriteShow} favoriteShowsList={favoriteShowsList} />
       </TabPanel>
     </Container>
